@@ -3,7 +3,7 @@
 		<title>Spring-Playground</title>
 	</head>
 	<body>
-		<h1>Welcome All</h1>
+		<h1>Welcome DBA</h1>
 		<a href= "/SpringCore/logout">Logout</a>
 	</body>
 
