@@ -3,10 +3,10 @@ package com.core.design.pattern.singleton;
 public class DataGeneratorMain {
 
 	public static void main(String[] args) {
-		DataGenerator d1 = new DataGenerator("Welcome to Java Threading", 1000000);
-		DataGenerator d2 = new DataGenerator("Hello Java Multithreading", 500000);
-		DataGenerator d3 = new DataGenerator("Greeting to developers", 900000);
-		DataGenerator d4 = new DataGenerator("Namaste Java", 1200000);
+		DataGenerator d1 = new DataGenerator("Welcome to Java Threading", 100000);
+		DataGenerator d2 = new DataGenerator("Hello Java Multithreading", 50000);
+		DataGenerator d3 = new DataGenerator("Greeting to developers", 90000);
+		DataGenerator d4 = new DataGenerator("Namaste Java", 120000);
 		
 		Thread t1= new Thread(d1);
 		Thread t2= new Thread(d2);

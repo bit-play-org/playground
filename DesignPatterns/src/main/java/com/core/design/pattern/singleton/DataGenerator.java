@@ -17,13 +17,14 @@ public class DataGenerator implements Runnable{
 	
 	@Override
 	public void run() {
+		
 		try {
-			for(int i = 0; i< this.writeCount; i++){
-				CentralDataWriter.getCentralFileWriter().write(YYYYMMDDHHMMSS_FORMAT.format(new Date())+"|"+baseString);
-			}
+			System.out.println("Started for : "+this.baseString);			
+			CentralDataWriter.getCentralFileWriter().write(YYYYMMDDHHMMSS_FORMAT.format(new Date())+"|"+baseString, writeCount);
+				
 		} catch (IOException e) {
 			e.printStackTrace();
-		}		
+		}	
 	}
 	
 	

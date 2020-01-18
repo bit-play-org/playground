@@ -1,5 +1,7 @@
 package com.playground.spring.controllers;
 
+import java.security.Principal;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class AuthController {
@@ -37,5 +40,21 @@ public class AuthController {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
         return "redirect:/login?logout=true";
+    }
+    
+    @RequestMapping(value="/access-denied", method = RequestMethod.GET)
+    public ModelAndView accessDenied (Principal user) {
+    	ModelAndView model = new ModelAndView();
+
+		if (user != null) {
+			model.addObject("msg", "Hi " + user.getName() 
+			+ ", you do not have permission to access this page!");
+		} else {
+			model.addObject("msg", 
+			"You do not have permission to access this page!");
+		}
+
+		model.setViewName("access-denied");
+		return model;
     }
 }

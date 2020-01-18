@@ -30,19 +30,23 @@ public class CentralDataWriter {
 	
 	public synchronized static CentralDataWriter getCentralFileWriter() throws IOException {
 		
-		if(centralDataWriter == null) {
-			initCentralWriter();
-		}
+			if(centralDataWriter == null) {				
+						initCentralWriter();				
+			}			
+			return centralDataWriter;
 		
-		return centralDataWriter;
 	}
 	
-	public synchronized static void write(String record) throws IOException {
-		try {
-			centralDataWriter.fileWriter.write(record+"\n");
-		} finally {
-			centralDataWriter.fileWriter.flush();
-		}
+	public synchronized static void write(String record, int count) throws IOException {
+			
+			for(int i = 0;i< count; i++) {
+				try {
+					centralDataWriter.fileWriter.write(record+"\n");
+				} finally {
+					centralDataWriter.fileWriter.flush(); 
+				}
+			}
+			
 	}
 	
 	 
