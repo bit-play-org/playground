@@ -52,8 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.and()
 		.exceptionHandling().accessDeniedPage("/access-denied")
 		.and()
-		.csrf()
-		;
+		.csrf();
 		
 		/*http.authorizeRequests()
 		.antMatchers("/secured/**").access("hasRole('ROLE_ADMIN')")
