@@ -7,4 +7,8 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
 	TestBasicOperations.class
 })
-public class MathTestSuit {}
+public class MathTestSuit {
+	
+	
+	
+}

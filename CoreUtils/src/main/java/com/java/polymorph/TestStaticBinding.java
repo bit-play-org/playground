@@ -4,8 +4,20 @@ import com.java.exception.NegativeValueException;
 
 public class TestStaticBinding {
 
-	public static void main(String[] args) {
+	{
+		System.out.println("Instance block");
+	}
 	
+	static {
+		System.out.println("Static Block");
+	}
+	
+	public TestStaticBinding() {
+		System.out.println("Constructor Block");
+	}
+	static int x;
+	public static void main(String[] args) {
+		System.out.println("Main Block");
 		TestStaticBinding tsb1 = new TestStaticBinding();
 		
 		

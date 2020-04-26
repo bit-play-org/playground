@@ -12,4 +12,10 @@ public class Car extends Vehicle{
 	public boolean hasAirBags() {
 		return true;
 	}
+	
+	public Car display() {
+		
+		return null;
+		
+	}
 }

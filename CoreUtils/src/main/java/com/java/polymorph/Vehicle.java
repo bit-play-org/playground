@@ -8,7 +8,9 @@ public class Vehicle {
 		return "Petrol/Diesel/CNG/LPG";
 	}
 	
-	public void display() {
+	public Vehicle display() {
 		System.out.println("Vehicle Class");
+		
+		return null;
 	}
 }
